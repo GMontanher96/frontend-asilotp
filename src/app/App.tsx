@@ -1,10 +1,16 @@
-import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { AppRoutes } from './routes';
+import { AppThemeProvider } from './shared/contexts/ThemeContext';
 
 export const App = () => {
   return (
-    <div className="App">
-     <h2>Ola</h2>
-    </div>
+    <AppThemeProvider>
+    <BrowserRouter>
+      <AppRoutes />
+      </BrowserRouter>
+    </AppThemeProvider>
+     
+    
   );
 }
 
