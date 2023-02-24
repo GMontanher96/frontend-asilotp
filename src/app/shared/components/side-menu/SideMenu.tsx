@@ -1,13 +1,14 @@
-import { Drawer, useTheme, Avatar, Divider, List, ListItemButton, ListItemIcon, ListItemText, Icon } from "@mui/material";
+import { Drawer, useTheme, Avatar, Divider, List, ListItemButton, ListItemIcon, ListItemText, Icon, useMediaQuery } from "@mui/material";
 import { ReactNode } from "react";
 import { Box } from "@mui/system";
 
 export const SideMenu = ({ children }: { children: ReactNode }) => {
   const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <>
-      <Drawer variant="permanent">
+      <Drawer open={true} variant={smDown ? 'temporary' : 'permanent'}>
         <Box width={theme.spacing(28)} height="100%" display="flex" flexDirection="column">
           <Box
             width="100%"
@@ -32,32 +33,12 @@ export const SideMenu = ({ children }: { children: ReactNode }) => {
                         <Icon>home</Icon>
                     </ListItemIcon>
                     <ListItemText primary="Home" />
-                    <ListItemIcon>
-                        <Icon>home</Icon>
-                    </ListItemIcon>
-                    <ListItemText primary="Serviço Social" />
-                    <ListItemIcon>
-                        <Icon>diversity</Icon>
-                    </ListItemIcon>
-                    <ListItemText primary="Enfermagem" />
-                    <ListItemIcon>
-                        <Icon>healing</Icon>
-                    </ListItemIcon>
-                    <ListItemText primary="Terapia Ocupacional" />
-                    <ListItemIcon>
-                        <Icon>home</Icon>
-                    </ListItemIcon>
-                    <ListItemText primary="Fisioterapia" />
-                    <ListItemIcon>
-                        <Icon>home</Icon>
-                    </ListItemIcon>
-                    <ListItemText primary="About" />
                 </ListItemButton>
             </List>
           </Box>
         </Box>
       </Drawer>
-      <Box height="100vh" marginLeft={theme.spacing(28)}>
+      <Box height="100vh" marginLeft={smDown ? 0 : theme.spacing(28)}>
         {children}
       </Box>
     </>
