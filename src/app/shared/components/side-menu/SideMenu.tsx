@@ -4,7 +4,6 @@ import { Box } from '@mui/system';
 import { useAppThemeContext, useDrawerContext } from '../../contexts';
 import { ReactNode } from 'react';
 
-
 interface IListItemLinkProps {
   to: string;
   icon: string;
@@ -96,6 +95,16 @@ export const SideMenu = ({ children }: { children: ReactNode }) => {
                   <Icon>dark_mode</Icon>
                 </ListItemIcon>
                 <ListItemText primary="Alternar tema" />
+              </ListItemButton>
+            </List>
+          </Box>
+          <Box>
+            <List component="nav">
+              <ListItemButton >
+                <ListItemIcon>
+                  <Icon>help</Icon>
+                </ListItemIcon>
+                <ListItemText primary="Suporte" />
               </ListItemButton>
             </List>
           </Box>

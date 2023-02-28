@@ -14,6 +14,31 @@ export const AppRoutes = () => {
             path: '/pagina-inicial',
             label: 'Home',
           },
+          {
+            icon: 'people',
+            path: '/servico-social',
+            label: 'Serviço Social',
+          },
+          {
+            icon: 'favorite',
+            path: '/enfermagem',
+            label: 'Enfermagem',
+          },
+          {
+            icon: 'psychology',
+            path: '/terapia-ocupacional',
+            label: 'T. Ocupacional',
+          },
+          {
+            icon: 'blind',
+            path: '/fisioterapia',
+            label: 'Fisioterapia',
+          },
+          {
+            icon: 'info',
+            path: '/sobre',
+            label: 'Sobre',
+          },
         ]);
       }, []);
    
