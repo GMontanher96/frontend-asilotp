@@ -1,6 +1,6 @@
 import { Box, TextField, Button, Paper, useTheme, Icon } from "@mui/material";
 
-interface IToolbarProps {
+interface IToolbarListProps {
   textSearch?: string;
   showInputSearch?: boolean;
   onEditTextSearch?: (newText: string) => void;
@@ -9,7 +9,7 @@ interface IToolbarProps {
   onClickNew?: () => void;
 }
 
-export const Toolbar: React.FC<IToolbarProps> = ({
+export const ToolbarList: React.FC<IToolbarListProps> = ({
   textSearch = "",
   showInputSearch = false,
   onEditTextSearch,
@@ -46,7 +46,7 @@ export const Toolbar: React.FC<IToolbarProps> = ({
          disableElevation
          variant="contained"
          onClick={onClickNew}
-         endIcon={<Icon>search</Icon>}
+         startIcon={<Icon>search</Icon>}
        >
          {textButtonNew}
        </Button>
