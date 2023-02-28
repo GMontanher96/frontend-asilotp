@@ -46,7 +46,7 @@ export const LayoutBase: React.FC<ILayoutBaseProps> = ({
           whiteSpace="nowrap"
           overflow="hidden"
           textOverflow="ellipsis"
-          variant={smDown ? 'h5' : mdDown ? 'h4' : 'h3'}
+          variant={smDown ? 'h5' : mdDown ? 'h4' : 'h5'}
         >
           {titulo}
         </Typography>
