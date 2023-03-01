@@ -88,7 +88,7 @@ export const SideMenu = ({ children }: { children: ReactNode }) => {
             </List>
           </Box>
 
-          <Box>
+         {/*  <Box>
             <List component="nav">
               <ListItemButton onClick={toggleTheme}>
                 <ListItemIcon>
@@ -97,7 +97,7 @@ export const SideMenu = ({ children }: { children: ReactNode }) => {
                 <ListItemText primary="Alternar tema" />
               </ListItemButton>
             </List>
-          </Box>
+          </Box> */}
           <Box>
             <List component="nav">
               <ListItemButton >
