@@ -1,4 +1,4 @@
-import { Box, Divider, Paper, useTheme } from "@mui/material";
+import { Box, Divider, Paper, Skeleton, useTheme } from "@mui/material";
 import { Button } from "@mui/material";
 import { Icon } from "@mui/material";
 
@@ -10,6 +10,12 @@ interface IToolDetailProps {
   showSaveButton?: boolean;
   showSaveAndCloseButton?: boolean;
 
+  showNewButtonLoading?: boolean;
+  showBackButtonLoading?: boolean;
+  showDeleteButtonLoading?: boolean;
+  showSaveButtonLoading?: boolean;
+  showSaveAndCloseButtonLoading?: boolean;
+
   onClickNew?: () => void;
   onClickBack?: () => void;
   onClickDelete?: () => void;
@@ -19,17 +25,24 @@ interface IToolDetailProps {
 
 export const ToolbarDetail: React.FC<IToolDetailProps> = ({
   textNewButton = "Novo",
+  
   showNewButton = true,
   showBackButton = true,
   showDeleteButton = true,
   showSaveButton = true,
   showSaveAndCloseButton = false,
 
+  showNewButtonLoading = false,
+  showBackButtonLoading = false,
+  showDeleteButtonLoading = false,
+  showSaveButtonLoading = false,
+  showSaveAndCloseButtonLoading = false,
+
   onClickNew,
   onClickBack,
   onClickDelete,
   onClickSave,
-  onClickSaveAndClose
+  onClickSaveAndClose,
 }) => {
   const theme = useTheme();
   return (
@@ -43,7 +56,7 @@ export const ToolbarDetail: React.FC<IToolDetailProps> = ({
       gap={1}
       component={Paper}
     >
-      {showSaveButton && (
+      {(showSaveButton && !showSaveButtonLoading) && (
         <Button
           color="primary"
           disableElevation
@@ -54,7 +67,9 @@ export const ToolbarDetail: React.FC<IToolDetailProps> = ({
           Salvar
         </Button>
       )}
-      {showSaveAndCloseButton && (
+      {showSaveButtonLoading && <Skeleton width={110} height={60} />}
+
+      {(showSaveAndCloseButton  && !showSaveAndCloseButtonLoading)&& (
         <Button
           color="primary"
           disableElevation
@@ -65,7 +80,9 @@ export const ToolbarDetail: React.FC<IToolDetailProps> = ({
           Salvar e voltar
         </Button>
       )}
-      {showDeleteButton && (
+      {showSaveAndCloseButtonLoading && <Skeleton width={110} height={60} />}
+
+      {(showDeleteButton && !showDeleteButtonLoading) && (
         <Button
           color="primary"
           disableElevation
@@ -76,7 +93,10 @@ export const ToolbarDetail: React.FC<IToolDetailProps> = ({
           Apagar
         </Button>
       )}
-      {showNewButton && (
+
+      {showDeleteButtonLoading && <Skeleton width={110} height={60} />}
+
+      {(showNewButton && !showNewButtonLoading) && (
         <Button
           color="primary"
           disableElevation
@@ -87,8 +107,11 @@ export const ToolbarDetail: React.FC<IToolDetailProps> = ({
           {textNewButton}
         </Button>
       )}
+
+      {showNewButtonLoading && <Skeleton width={110} height={60} />}
+
       <Divider variant="middle" orientation="vertical" />
-      {showBackButton && (
+      {(showBackButton && !showBackButtonLoading) && (
         <Button
           color="primary"
           disableElevation
@@ -99,6 +122,9 @@ export const ToolbarDetail: React.FC<IToolDetailProps> = ({
           Voltar
         </Button>
       )}
+
+      {showBackButtonLoading && <Skeleton width={110} height={60} />}
+
     </Box>
   );
 };

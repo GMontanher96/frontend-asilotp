@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDrawerContext } from '../shared/contexts';
 
 import { Dashboard } from "../pages";
+import { Button } from "@mui/material";
 
 export const AppRoutes = () => {
     const { setDrawerOptions } = useDrawerContext();
@@ -45,6 +46,14 @@ export const AppRoutes = () => {
     return (
      <Routes>
      <Route path="/pagina-inicial" element={<Dashboard />} />
+     <Route path="/servico-social" element={<Button variant="contained" />} />
+     <Route path="/enfermagem" element={<Button variant="contained" />} />
+     <Route path="/terapia-ocupacional" element={<Button variant="contained" />} />
+     <Route path="/fisioterapia" element={<Button variant="contained" />} />
+     <Route path="/sobre" element={<Button variant="contained" />} />
+     <Route path="/administracao" element={<Button variant="contained" />} />
+     <Route path="/suporte" element={<Button variant="contained" />} />
+
         <Route path="*" element={<Navigate to="/pagina-inicial" />} />
      </Routes>
     )
