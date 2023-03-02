@@ -7,7 +7,7 @@ export const Dashboard = () => {
     return (
         <LayoutBase titulo="Página Inicial | Lar Padre Geremias" 
         barraDeFerramentas={(
-            <ToolbarDetail showSaveAndCloseButton showSaveAndCloseButtonLoading />
+            <ToolbarDetail showSaveAndCloseButton  showNewButton  />
         )}>
             Testando
         </LayoutBase>
