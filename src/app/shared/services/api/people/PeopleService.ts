@@ -3,9 +3,11 @@ import { Api } from "../axios-config";
 
 interface IListingPeople {
     id: number;
-    email: string;
+    name: string;
     surname: string;
-    cidadeId: number;
+    birth_date: number;
+    cpf: string;
+    rg: string
 }
 
 interface IDetailPeople {
@@ -22,7 +24,7 @@ type TPeopleTotalCount = {
 
 const getAll = async (page = 1, filter = ''): Promise<TPeopleTotalCount | Error> => {
     try {
-      const urlRelativa = `/people?_page=${page}&_limit=${Enviroment.LIMIT_ROW}&nomeCompleto_like=${filter}`;
+      const urlRelativa = `/people?_page=${page}&_limit=${Enviroment.LIMIT_ROW}&name_like=${filter}`;
   
       const { data, headers } = await Api.get(urlRelativa);
   
