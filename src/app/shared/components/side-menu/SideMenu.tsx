@@ -77,16 +77,7 @@ export const SideMenu = ({ children }: { children: ReactNode }) => {
             </List>
           </Box>
 
-          <Box>
-            <List component="nav">
-              <ListItemButton >
-                <ListItemIcon>
-                  <Icon>settings</Icon>
-                </ListItemIcon>
-                <ListItemText primary="Administração" />
-              </ListItemButton>
-            </List>
-          </Box>
+     
 
          {/*  <Box>
             <List component="nav">

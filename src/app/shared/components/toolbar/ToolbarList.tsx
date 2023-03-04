@@ -49,7 +49,7 @@ export const ToolbarList: React.FC<IToolbarListProps> = ({
          disableElevation
          variant="contained"
          onClick={onClickNew}
-         startIcon={<Icon>search</Icon>}
+         startIcon={<Icon>add</Icon>}
        >
          {textButtonNew}
        </Button>
