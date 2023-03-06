@@ -4,6 +4,7 @@ import { useDrawerContext } from '../shared/contexts';
 
 import { Dashboard } from "../pages";
 import { ServiceSocial } from "../pages";
+import { People } from "../pages";
 
 export const AppRoutes = () => {
     const { setDrawerOptions } = useDrawerContext();
@@ -17,7 +18,7 @@ export const AppRoutes = () => {
           },
           {
             icon: 'people',
-            path: '/servico-social',
+            path: '/people',
             label: 'Serviço Social',
           },
           {
@@ -51,7 +52,7 @@ export const AppRoutes = () => {
     return (
      <Routes>
      <Route path="/pagina-inicial" element={<Dashboard />} />
-     <Route path="/servico-social" element={<ServiceSocial />} />
+     <Route path="/people" element={<People />} />
 
         <Route path="*" element={<Navigate to="/pagina-inicial" />} />
      </Routes>
