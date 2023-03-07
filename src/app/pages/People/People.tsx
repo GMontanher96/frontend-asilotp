@@ -7,7 +7,7 @@ import { PeopleService } from "../../shared/services/api/people/PeopleService";
 
 export const People: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const { debounce } = useDebounce(3000, false);
+  const { debounce } = useDebounce();
 
   const search = useMemo(() => {
     return searchParams.get('search') || '';
